@@ -14,7 +14,7 @@
   "author": "c3-kyleryu",
   "license": "Apache-2.0",
   "dependencies": {
-    "follow-redirects": "1.15.4",
+    "follow-redirects": "1.16.0",
     "micromatch": "4.0.5",
     "tough-cookie": "4.1.2",
     "word-wrap": "1.2.3"
