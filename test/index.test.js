@@ -6,6 +6,8 @@ const {
   wordCount,
   bumpVersion,
   isCompatible,
+  chunk,
+  titleCase,
 } = require('../src/index');
 
 describe('slugify', () => {
@@ -47,4 +49,22 @@ describe('isCompatible', () => {
   });
 });
 
-// Note: chunk, titleCase, and pad are intentionally left untested.
+describe('chunk', () => {
+  it('splits an array into fixed-size chunks', () => {
+    expect(chunk([1, 2, 3, 4, 5], 2)).toEqual([[1, 2], [3, 4], [5]]);
+  });
+  it('returns an empty array for empty input', () => {
+    expect(chunk([], 3)).toEqual([]);
+  });
+});
+
+describe('titleCase', () => {
+  it('capitalizes the first letter of each word', () => {
+    expect(titleCase('hello world')).toBe('Hello World');
+  });
+  it('lowercases the rest of each word', () => {
+    expect(titleCase('fOO bAR')).toBe('Foo Bar');
+  });
+});
+
+// Note: pad is intentionally left untested (kept below the coverage target).
